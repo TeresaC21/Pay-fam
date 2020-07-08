@@ -3,7 +3,7 @@ import React, { Fragment, useState } from 'react';
 // Components
 import Error from './Error';
 
-const Question = () => {
+const Question = ({ setBudget, setRest, setShowQuestion }) => {
 
     // Define state quantity
     const [quantity, setQuantity] = useState(0);
@@ -13,7 +13,6 @@ const Question = () => {
     const defineBudget = e => {
         setQuantity(parseInt(e.target.value, 10));
     }
-
     // Submit for define the budget
     const addBudget = e => {
         e.preventDefault();
@@ -23,12 +22,12 @@ const Question = () => {
             setError(true);
             return;
         }
-
         // if the validation is passed
         setError(false);
-
+        setBudget(quantity);
+        setRest(quantity);
+        setShowQuestion(false);
     }
-
     return (
         <Fragment>
             <h2>Coloca tu presupuesto</h2>
