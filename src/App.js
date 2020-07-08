@@ -8,7 +8,16 @@ function App() {
   // Define the states
   const [budget, setBudget] = useState(0);
   const [rest, setRest] = useState(0);
-  const [showQuestion, setShowQuestion] = useState(true)
+  const [showQuestion, setShowQuestion] = useState(true);
+  const [expenses, setExpenses] = useState([]);
+
+  // When we add a new spend
+  const addNewExpense = expense => {
+    setExpenses([
+      ...expenses,
+      expense
+    ])
+  }
 
 
   return (
@@ -26,7 +35,9 @@ function App() {
           ) : (
             <div className="row">
               <div className="one-half column">
-                <Form />
+                <Form
+                  addNewExpense={addNewExpense}
+                />
               </div>
               <div className="one-half column">
                 2
