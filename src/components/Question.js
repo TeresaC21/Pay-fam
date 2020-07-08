@@ -7,7 +7,7 @@ const Question = ({ setBudget, setRest, setShowQuestion }) => {
 
     // Define state quantity
     const [quantity, setQuantity] = useState(0);
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false);
 
     // Function that read the budget
     const defineBudget = e => {
