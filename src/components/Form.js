@@ -6,7 +6,7 @@ import Error from './Error';
 // Library
 import shortid from 'shortid';
 
-const Form = ({ addNewExpense }) => {
+const Form = ({ setExpense, setCreateExpense }) => {
 
     const [descriptionInput, setDescriptionInput] = useState('');
     const [quantityInput, setQuantityInput] = useState(0);
@@ -32,7 +32,8 @@ const Form = ({ addNewExpense }) => {
         }// console.log(spend)
 
         // Pass the spend to main component
-        addNewExpense(spend);
+        setExpense(spend);
+        setCreateExpense(true);
 
         // Reset the form inputs
         setDescriptionInput('');

@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 
-const BudgetaryControl = () => {
+const BudgetaryControl = ({ budget, rest }) => {
     return (
         <Fragment>
             <div className="alert alert-primary">
-                Presupuesto:
+                Presupuesto: $ {budget}
             </div>
             <div className="alert">
-                Restante:
+                Restante: $ {rest}
             </div>
         </Fragment>
     );
