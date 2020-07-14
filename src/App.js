@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 // Components
 import Question from './components/Question';
 import Form from './components/Form';
+import List from './components/List';
+import BudgetaryControl from './components/BudgetaryControl';
 
 function App() {
   // Define the states
@@ -18,7 +20,6 @@ function App() {
       expense
     ])
   }
-
 
   return (
     <div className="container">
@@ -40,8 +41,8 @@ function App() {
                 />
               </div>
               <div className="one-half column">
-                2
-            </div>
+                <List expenses={expenses} />
+              </div>
             </div>
           )}
       </div>
