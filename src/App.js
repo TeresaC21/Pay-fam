@@ -31,7 +31,7 @@ function App() {
       //Reset to false after of read condition
       setCreateExpense(false);
     }
-  }, [expense])
+  }, [expense, createExpense, expenses, rest])
 
   // When we add a new spend
   /*   const addNewExpense = expense => {
