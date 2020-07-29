@@ -33,14 +33,6 @@ function App() {
     }
   }, [expense, createExpense, expenses, rest])
 
-  // When we add a new spend
-  /*   const addNewExpense = expense => {
-      setExpenses([
-        ...expenses,
-        expense
-      ])
-    } */
-
   return (
     <div className="container">
       <h1>Presupuesto</h1>
@@ -78,3 +70,12 @@ function App() {
 }
 
 export default App;
+
+
+// When we add a new spend
+/*   const addNewExpense = expense => {
+    setExpenses([
+      ...expenses,
+      expense
+    ])
+  } */

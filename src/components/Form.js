@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 // Components
 import Error from './Error';
@@ -9,7 +10,7 @@ import shortid from 'shortid';
 const Form = ({ setExpense, setCreateExpense }) => {
 
     const [descriptionInput, setDescriptionInput] = useState('');
-    const [quantityInput, setQuantityInput] = useState(0);
+    const [quantityInput, setQuantityInput] = useState("");
     const [error, setError] = useState(false);
 
     // When the user add a spend
@@ -37,7 +38,7 @@ const Form = ({ setExpense, setCreateExpense }) => {
 
         // Reset the form inputs
         setDescriptionInput('');
-        setQuantityInput(0);
+        setQuantityInput("");
 
     }
 
@@ -47,7 +48,7 @@ const Form = ({ setExpense, setCreateExpense }) => {
         >
             <h2>Agrega tus gastos aquí</h2>
 
-            {error ? <Error menssage="Ambos Campos Son Obligatorios ó Presupuesto Incorrecto" /> : null}
+            {error ? <Error message="Ambos Campos Son Obligatorios ó Presupuesto Incorrecto" /> : null}
 
             <div className="field">
                 <label>Descripción Gasto</label>
@@ -64,7 +65,7 @@ const Form = ({ setExpense, setCreateExpense }) => {
                 <input
                     type="number"
                     className="u-fll-width"
-                    placeholder="Ej. 300"
+                    placeholder="Ej. 100"
                     value={quantityInput}
                     onChange={e => setQuantityInput(parseInt(e.target.value, 10))}
                 />
@@ -77,6 +78,10 @@ const Form = ({ setExpense, setCreateExpense }) => {
             />
         </form>
     );
+}
+Form.propTypes = {
+    setExpense: PropTypes.func.isRequired,
+    setCreateExpense: PropTypes.func.isRequired,
 }
 
 export default Form;
